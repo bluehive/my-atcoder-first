@@ -1,0 +1,8 @@
+;; Object atcoder
+;; EDE Project Files are auto generated: Do Not Edit
+(ede-proj-project "atcoder"
+  :file "Project.ede"
+  :name "atcoder"
+  :targets nil
+  :object-name "atcoder"
+  :makefile-type Makefile\.am)
