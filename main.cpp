@@ -2,24 +2,53 @@
 using namespace std;
 #define rep(i,n) for (int i = 0; i < (int)(n) ; i++)
 
-int main() {
-    int N, A;
-    cin >> N >> A;
-    assert( not(N < 0 || 7 < N) );  assert(not (A < 0 || 10 < A) ) ;
-    // 正規表現を定義  std::regex pattern("+|-|*|/");
-    std::regex pattern("[+\\-*/]");
-    std::string op; int b;
-    rep(i, N){
-        std::cin >> op >> b ;
-        // 正規表現にマッチするかチェック
-        assert(std::regex_match(op, pattern));
-        // ここにプログラムを追記
-        if (op == "/" && b == 0) {
-            cout << "error" << endl;
-            break ;
-        }
-        cout << i + 1 << ":" << (A = (op == "+") ? A + b : (op == "-") ? A - b : (op == "*") ? A * b : A / b) << endl ;
-    }
+//1≤N≤100  Si​ は P か W か G か Y
+// set , lamdb
 
+void Main() {
+    int N ;  cin >> N ;
+    assert( not(N < 1 || 100 < N) );
+    // 正規表現を定義
+    std::regex pattern_four("[PWGY]");
+    regex pattern_yellow("Y");//  regex pattern_three("[PWG]");
+    vector <string> v1_colors (N , "Z")  ;
+    string ans = "Three" ;
+    rep(i, N){
+        std::cin >> v1_colors[i] ;
+        // 正規表現にマッチするかチェック
+        assert(std::regex_match(v1_colors[i], pattern_four));
+        // printf  cout << "step:" << v1_colors[i] << endl;
+        if (regex_match(v1_colors[i], pattern_yellow)){
+            ans = "Four" ;
+        }
+    }
+    cout << ans << endl;
+    return ;
+}
+
+int main(){
+
+    //
+    int f1 =  [](int a, int b){ return a + b ;}( 2 ,3) ;
+    cout << f1 << endl;
+
+    //
+    auto f2 = [](int a, int b) -> int { // ラムダ式の本体
+        // 処理
+        return a * b;
+    };
+    cout << f2(3, 11) << endl;
+    //
+    auto f3 = [](auto a){ cout << "iostream ::" << a << endl ; };
+    f3("Gifu jyou"s) ;
+    f3("夏休み期間"s);
+    f3(1999) ;
+
+    auto f4 =[](auto a, string b){  cout << "stream ::" << a << " is " << b << endl; };
+    f4("Kyoto gosyo"s , "goods");
+    f4("春休み"s , "enjoy");
+    f4(2100 , "feuture");
+
+    //  Main();
     return 0;
 }
