@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
+#include "sub_1.h" // string spring1;
+#include "sub_2.h" // string summer1 ;
+
 using namespace std;
 #define rep(i,n) for (int i = 0; i < (int)(n) ; i++)
+
+void Main2(){}
 
 //1≤N≤100  Si​ は P か W か G か Y
 // set , lamdb
@@ -27,7 +32,6 @@ void Main() {
 }
 
 int main(){
-
     //
     int f1 =  [](int a, int b){ return a + b ;}( 2 ,3) ;
     cout << f1 << endl;
@@ -45,9 +49,16 @@ int main(){
     f3(1999) ;
 
     auto f4 =[](auto a, string b){  cout << "stream ::" << a << " is " << b << endl; };
-    f4("Kyoto gosyo"s , "goods");
+    f4("Kyotogosyo"s , "goods");
     f4("春休み"s , "enjoy");
     f4(2100 , "feuture");
+    // header
+    cout << spring1 << endl ;
+    cout << summer2 << endl ;
+    // class
+    Say s;
+    s.hello();
+    s.apple1();
 
     //  Main();
     return 0;
