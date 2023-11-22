@@ -11,3 +11,5 @@ void say::apple1(){
 void say::hello(){
     cout << "Hello!! こんにちは！" << endl;
 }
+
+// Makefile 修正
